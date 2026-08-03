@@ -1,1 +1,133 @@
-<h1>Xin chao! Day la trang web mien phi cua toi.</h1>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith Worldwide Group | Đỉnh Cao Dịch Vụ Toàn Cầu</title>
+    <style>
+        /* Cài đặt cơ bản */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; scroll-behavior: smooth; }
+        body { color: #333; line-height: 1.6; background-color: #f8f9fa; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* Thanh điều hướng (Header) */
+        header { background: #0a192f; color: #fff; padding: 1.2rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 15px rgba(0,0,0,0.2); }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #d4af37; letter-spacing: 1px; }
+        .logo span { color: #fff; font-weight: 300; }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav ul li a { font-weight: 500; font-size: 1rem; transition: color 0.3s; text-transform: uppercase; }
+        nav ul li a:hover { color: #d4af37; }
+
+        /* Nút bấm (Button) */
+        .btn { display: inline-block; background: #d4af37; color: #0a192f; padding: 12px 35px; border-radius: 4px; font-weight: bold; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1.5px; border: 1px solid #d4af37; }
+        .btn:hover { background: transparent; color: #d4af37; transform: translateY(-3px); }
+
+        /* Khu vực Hero (Phần đầu trang) */
+        .hero { background: linear-gradient(135deg, #0a192f 0%, #172a45 100%); color: white; padding: 9rem 5%; text-align: center; }
+        .hero h1 { font-size: 3.8rem; margin-bottom: 1.5rem; color: #d4af37; font-weight: 800; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 2.5rem; color: #ccd6f6; }
+
+        /* Khu vực Lĩnh vực hoạt động (Services) */
+        .services { padding: 6rem 5%; text-align: center; }
+        .services-header { margin-bottom: 4rem; }
+        .services-header h2 { font-size: 2.5rem; color: #0a192f; margin-bottom: 10px; font-weight: 800; text-transform: uppercase; }
+        .services-header p { color: #666; font-size: 1.1rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: white; padding: 3rem 2rem; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; text-align: left; border-top: 4px solid #d4af37; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
+        .card-icon { font-size: 3.5rem; margin-bottom: 1.5rem; display: inline-block; }
+        .card h3 { font-size: 1.5rem; color: #0a192f; margin-bottom: 1rem; }
+        .card p { color: #555; line-height: 1.7; }
+
+        /* Khu vực Giới thiệu (About) */
+        .about { background: #e6f1ff; padding: 6rem 5%; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .about-text { max-width: 800px; }
+        .about-text h2 { font-size: 2.5rem; color: #0a192f; margin-bottom: 1.5rem; font-weight: 800; text-transform: uppercase; }
+        .about-text p { margin-bottom: 1.5rem; font-size: 1.15rem; color: #444; }
+        
+        /* Chân trang (Footer) */
+        footer { background: #020c1b; color: #8892b0; text-align: center; padding: 3rem 5%; border-top: 1px solid #172a45; }
+        footer .company-name { font-size: 1.5rem; font-weight: bold; color: #fff; margin-bottom: 1rem; }
+        footer p { margin-bottom: 0.8rem; }
+        footer .socials { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #172a45; display: inline-block; }
+        footer .socials span { margin: 0 15px; cursor: pointer; color: #d4af37; font-weight: 500; }
+
+        /* Tương thích giao diện điện thoại (Responsive) */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero { padding: 6rem 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Zenith<span>Worldwide</span></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#services">Hệ sinh thái</a></li>
+                <li><a href="#about">Về chúng tôi</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Vươn Tầm Thế Giới</h1>
+        <p>Tập đoàn đa quốc gia cung cấp các giải pháp toàn diện từ truyền thông số, chiến lược tiếp thị đến các dịch vụ chăm sóc sức khỏe và lối sống cao cấp.</p>
+        <a href="#contact" class="btn">Hợp tác kinh doanh</a>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-header">
+            <h2>Lĩnh Vực Hoạt Động Trọng Điểm</h2>
+            <p>Hệ sinh thái đa ngành mang lại giá trị thực và trải nghiệm cao cấp cho khách hàng toàn cầu</p>
+        </div>
+        <div class="grid">
+            <!-- Wellness & Spa -->
+            <div class="card">
+                <div class="card-icon">🌿</div>
+                <h3>Zenith Wellness & Health</h3>
+                <p>Mô hình dịch vụ trị liệu, chăm sóc sức khỏe và massage thư giãn cao cấp. Chúng tôi định hướng mở rộng chuỗi dịch vụ tới các thị trường quốc tế trọng điểm, đặc biệt là khu vực Trung Đông, mang lại tiêu chuẩn phục vụ hoàn hảo nhất.</p>
+            </div>
+            <!-- Marketing -->
+            <div class="card">
+                <div class="card-icon">📈</div>
+                <h3>Global Digital Marketing</h3>
+                <p>Khởi tạo và vận hành các chiến dịch quảng cáo hiệu suất cao trên đa nền tảng mạng xã hội. Phân tích dữ liệu người dùng, quản lý hệ thống tài khoản tối ưu và xây dựng chiến lược truyền thông thông minh.</p>
+            </div>
+            <!-- Media -->
+            <div class="card">
+                <div class="card-icon">🎬</div>
+                <h3>Digital Media & Production</h3>
+                <p>Sản xuất và phân phối nội dung số sáng tạo, thực hiện lồng tiếng chuyên nghiệp và đánh giá các tác phẩm nghệ thuật/giải trí. Đưa thông điệp lan tỏa mạnh mẽ và tiếp cận hàng triệu khán giả trên toàn cầu.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-text">
+            <h2>Tầm Nhìn & Sứ Mệnh</h2>
+            <p>Với khát vọng trở thành tập đoàn đa ngành hàng đầu, <strong>Zenith Worldwide Group</strong> luôn tiên phong trong việc ứng dụng công nghệ mạng và những mô hình quản lý hiện đại nhất vào quá trình vận hành doanh nghiệp.</p>
+            <p>Từ việc thấu hiểu sâu sắc văn hóa của từng thị trường quốc tế, cá nhân hóa các chiến dịch tiếp thị, cho đến việc thiết lập hạ tầng dịch vụ chuyên nghiệp, chúng tôi cam kết mang lại sự phát triển vượt bậc và vị thế vững chắc cho thương hiệu.</p>
+            <a href="#contact" class="btn">Tìm hiểu thêm</a>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="company-name">Zenith Worldwide Group</div>
+        <p>Thương hiệu quản lý hệ sinh thái dịch vụ toàn cầu</p>
+        <p>Email: business@zenithworldwidegroup.com | Trợ lý hỗ trợ qua hệ thống WhatsApp Business</p>
+        <div class="socials">
+            <span>🌐 Global Network</span>
+            <span>📱 Digital Ads</span>
+            <span>🏢 Wellness Centers</span>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem;">&copy; 2026 Zenith Worldwide Group. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
