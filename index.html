@@ -2,206 +2,147 @@
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Khóa zoom để tạo cảm giác giống native app khi click từ quảng cáo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Premium Masaža za Muškarce | Beograd</title>
-    <meta name="description" content="Ekskluzivna i profesionalna masaža za muškarce. Opustite se i oslobodite stresa. Zakažite svoj termin odmah preko WhatsApp-a ili Viber-a.">
+    <meta name="description" content="Ekskluzivna masaža za muškarce u centru Beograda. Zakažite preko WhatsApp-a ili Viber-a.">
     
-    <!-- Cảnh báo: Google Ads yêu cầu trang web phải tải nhanh và thân thiện với thiết bị di động -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0a0a0a;
             color: #f3f4f6;
-            scroll-behavior: smooth;
+            /* Ngăn chọn văn bản và highlight khi chạm để trông giống app thật */
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
-        h1, h2, h3, .font-playfair {
+        .font-playfair {
             font-family: 'Playfair Display', serif;
         }
-        .text-gold {
-            color: #D4AF37;
-        }
-        .bg-gold {
-            background-color: #D4AF37;
-        }
-        .border-gold {
-            border-color: #D4AF37;
-        }
+        .text-gold { color: #D4AF37; }
+        .bg-gold { background-color: #D4AF37; }
+        .border-gold { border-color: #D4AF37; }
+        
         .hero-bg {
-            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+            background: radial-gradient(circle at top center, #1f1f1f 0%, #0a0a0a 80%);
         }
-        
-        /* Hiệu ứng nhấp nháy nhẹ cho nút liên hệ để thu hút sự chú ý */
-        @keyframes pulse-soft {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+        /* Hiệu ứng nhịp đập cho nút */
+        @keyframes pulse-btn {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
-        .btn-pulse {
-            animation: pulse-soft 2s infinite;
+        .btn-wa-pulse {
+            animation: pulse-btn 2s infinite;
         }
-        
-        /* Sticky Footer Mobile */
-        .sticky-contact {
+
+        /* Thanh điều hướng dưới cùng cho mobile */
+        .app-bottom-bar {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            z-index: 50;
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(10, 10, 10, 0.98);
             backdrop-filter: blur(10px);
-            border-top: 1px solid #333;
-            padding: 12px;
+            border-top: 1px solid #222;
+            padding: 12px 16px 24px 16px; /* Padding dưới dày hơn cho iPhone tai thỏ/home bar */
             display: flex;
-            justify-content: space-around;
-            gap: 10px;
+            gap: 12px;
+            z-index: 100;
+        }
+        
+        /* Đảm bảo nội dung không bị che bởi thanh bottom bar */
+        .content-wrap {
+            padding-bottom: 90px; 
         }
     </style>
 </head>
-<body class="antialiased pb-24 md:pb-0">
+<body class="antialiased hero-bg min-h-screen flex flex-col content-wrap">
 
-    <header class="fixed w-full top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-playfair font-bold text-gold tracking-wider">
-                MASSAGE FOR MAN
-            </div>
-            <div class="hidden md:flex gap-4">
-                <a href="#usluge" class="hover:text-gold transition text-sm uppercase tracking-wide">Usluge (Dịch vụ)</a>
-                <a href="#kontakt" class="hover:text-gold transition text-sm uppercase tracking-wide">Kontakt (Liên hệ)</a>
-            </div>
-        </div>
+    <header class="py-4 text-center border-b border-gray-800 bg-black/50 sticky top-0 z-40 backdrop-blur-md">
+        <h1 class="text-xl font-playfair font-bold text-gold tracking-widest uppercase">
+            Massage For Man
+        </h1>
+        <p class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Beograd</p>
     </header>
 
-    <section class="hero-bg min-h-screen flex items-center justify-center pt-20">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-gold font-semibold tracking-[0.2em] uppercase text-sm mb-4">Ekskluzivno u Srbiji</h2>
-            <h1 class="text-5xl md:text-7xl font-bold font-playfair mb-6 leading-tight">
-                Premium Masaža <br>za Muškarce
-            </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
-                Opustite telo i um. Vrhunska terapeutska i relaksaciona masaža prilagođena modernom muškarcu. Diskretno, profesionalno i luksuzno.
-            </p>
-            
-            <!-- Nút Call to action chính trên Desktop -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="https://wa.me/84923973569" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-full font-semibold transition btn-pulse shadow-[0_0_20px_rgba(37,211,102,0.3)]">
-                    <i class="fab fa-whatsapp text-2xl"></i>
-                    Zakažite na WhatsApp
-                </a>
-                <a href="viber://chat?number=%2B84385299355" class="w-full sm:w-auto flex items-center justify-center gap-3 bg-[#7360F2] hover:bg-[#6654d6] text-white px-8 py-4 rounded-full font-semibold transition shadow-[0_0_20px_rgba(115,96,242,0.3)]">
-                    <i class="fab fa-viber text-2xl"></i>
-                    Zakažite na Viber
-                </a>
-            </div>
-            
-            <div class="mt-12 flex justify-center items-center gap-8 text-gray-400 text-sm">
-                <div class="flex items-center gap-2"><i class="fas fa-shield-alt text-gold"></i> 100% Diskrecija</div>
-                <div class="flex items-center gap-2"><i class="fas fa-star text-gold"></i> Profesionalni Terapeuti</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-[#111]" id="usluge">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-playfair text-gold mb-4">Zašto izabrati nas?</h2>
-                <div class="w-24 h-1 bg-gold mx-auto opacity-50"></div>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-10">
-                <!-- Điểm nổi bật 1 -->
-                <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-gray-800 hover:border-gold transition duration-300 group text-center">
-                    <div class="w-16 h-16 rounded-full bg-black/50 border border-gold mx-auto flex items-center justify-center mb-6 group-hover:bg-gold transition">
-                        <i class="fas fa-hands text-2xl text-gold group-hover:text-black transition"></i>
-                    </div>
-                    <h3 class="text-xl font-playfair font-semibold mb-3">Relaksacija (Thư giãn)</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">
-                        Oslobodite se stresa nakon napornog dana. Naše tehnike su dizajnirane da potpuno opuste vaše mišiće.
-                    </p>
-                </div>
-                
-                <!-- Điểm nổi bật 2 -->
-                <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-gray-800 hover:border-gold transition duration-300 group text-center">
-                    <div class="w-16 h-16 rounded-full bg-black/50 border border-gold mx-auto flex items-center justify-center mb-6 group-hover:bg-gold transition">
-                        <i class="fas fa-user-tie text-2xl text-gold group-hover:text-black transition"></i>
-                    </div>
-                    <h3 class="text-xl font-playfair font-semibold mb-3">Za Muškarce (Dành cho Nam)</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">
-                        Tretmani su specijalno prilagođeni muškoj anatomiji i potrebama. Fokus na regije pod najvećim opterećenjem.
-                    </p>
-                </div>
-                
-                <!-- Điểm nổi bật 3 -->
-                <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-gray-800 hover:border-gold transition duration-300 group text-center">
-                    <div class="w-16 h-16 rounded-full bg-black/50 border border-gold mx-auto flex items-center justify-center mb-6 group-hover:bg-gold transition">
-                        <i class="fas fa-user-secret text-2xl text-gold group-hover:text-black transition"></i>
-                    </div>
-                    <h3 class="text-xl font-playfair font-semibold mb-3">Diskrecija (Bảo mật)</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">
-                        Garantujemo potpunu privatnost i diskreciju za sve naše klijente. Vaš mir je naš prioritet.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-black relative" id="kontakt">
-        <!-- Overlay mờ để tạo background -->
-        <div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"></div>
+    <main class="flex-1 flex flex-col px-5 pt-6">
         
-        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
-            <h2 class="text-4xl md:text-5xl font-playfair text-white mb-6">Spremni za opuštanje?</h2>
-            <p class="text-xl text-gray-300 mb-12 font-light">
-                Kontaktirajte nas direktno. Dostupni smo 24/7 za vaše upite i rezervacije.
-            </p>
-            
-            <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                <!-- Nút WhatsApp lớn -->
-                <a href="https://wa.me/84923973569" target="_blank" rel="noopener noreferrer" class="bg-[#25D366] hover:bg-[#20bd5a] p-8 rounded-2xl text-white transition transform hover:-translate-y-1 shadow-lg shadow-[#25D366]/20">
-                    <i class="fab fa-whatsapp text-5xl mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2">WhatsApp</h3>
-                    <p class="text-sm opacity-90">+84 92 397 3569</p>
-                    <div class="mt-4 inline-block border border-white/30 rounded-full px-4 py-1 text-sm">Klikni za poruku</div>
-                </a>
-                
-                <!-- Nút Viber lớn -->
-                <a href="viber://chat?number=%2B84385299355" class="bg-[#7360F2] hover:bg-[#6654d6] p-8 rounded-2xl text-white transition transform hover:-translate-y-1 shadow-lg shadow-[#7360F2]/20">
-                    <i class="fab fa-viber text-5xl mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2">Viber</h3>
-                    <p class="text-sm opacity-90">+84 38 529 9355</p>
-                    <div class="mt-4 inline-block border border-white/30 rounded-full px-4 py-1 text-sm">Klikni za poruku</div>
-                </a>
-            </div>
-            
-            <p class="mt-12 text-sm text-gray-500">
-                * Molimo vas da nas kontaktirate porukom pre poziva kako bismo osigurali termin.
-                <br>(Vui lòng nhắn tin trước khi gọi để chúng tôi sắp xếp lịch).
+        <div class="text-center mb-8">
+            <h2 class="text-4xl font-playfair font-bold leading-tight mb-3">
+                Ekskluzivna<br>
+                <span class="text-gold">Masaža</span>
+            </h2>
+            <p class="text-gray-300 text-sm font-light px-2">
+                Vrhunska relaksacija za muškarce u strogom centru Beograda. Diskretno i profesionalno.
             </p>
         </div>
-    </section>
 
-    <footer class="bg-[#0a0a0a] border-t border-gray-800 py-10 pb-28 md:pb-10">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h4 class="font-playfair text-gold text-xl mb-4">MASSAGE FOR MAN</h4>
-            <p class="text-gray-500 text-sm mb-4">
-                Profesionalne usluge masaže. <br>
-                <!-- Thêm một địa chỉ ảo hoặc khu vực chung tại Serbia để tăng độ uy tín với Google Ads -->
-                Radimo na teritoriji Beograda i okoline.
-            </p>
-            <p class="text-gray-600 text-xs mt-8">
-                &copy; 2026 Massage for Man. Sva prava zadržana. <br>
-                <span class="opacity-50">Ovaj sajt je isključivo za punoletne osobe (18+). (Trang web này chỉ dành cho người trên 18 tuổi).</span>
-            </p>
+        <div class="flex flex-col gap-4 mb-10 w-full max-w-sm mx-auto">
+            <a href="https://wa.me/84923973569" target="_blank" class="w-full bg-[#25D366] active:bg-[#1da851] text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-3 text-lg transition-transform active:scale-95 shadow-lg btn-wa-pulse">
+                <i class="fab fa-whatsapp text-2xl"></i>
+                Zakažite (WhatsApp)
+            </a>
+            
+            <a href="viber://chat?number=%2B84385299355" class="w-full bg-[#7360F2] active:bg-[#5b4ac2] text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-3 text-lg transition-transform active:scale-95 shadow-lg">
+                <i class="fab fa-viber text-2xl"></i>
+                Zakažite (Viber)
+            </a>
         </div>
+
+        <div class="bg-[#111] border border-gray-800 rounded-3xl p-5 mb-8 w-full max-w-sm mx-auto">
+            <h3 class="text-gold font-playfair text-lg text-center mb-5 border-b border-gray-800 pb-3">Naše Prednosti</h3>
+            
+            <ul class="space-y-4">
+                <li class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold flex-shrink-0">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sm">100% Diskrecija</h4>
+                        <p class="text-xs text-gray-500">Vaša privatnost je zagarantovana</p>
+                    </div>
+                </li>
+                <li class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold flex-shrink-0">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sm">Samo za Muškarce</h4>
+                        <p class="text-xs text-gray-500">Prilagođeno muškom telu i stresu</p>
+                    </div>
+                </li>
+                <li class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold flex-shrink-0">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sm">Centar Beograda</h4>
+                        <p class="text-xs text-gray-500">Laka dostupnost i parking</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+    </main>
+
+    <footer class="text-center px-4 mt-auto mb-6 text-gray-600 text-xs">
+        <p>&copy; 2026 Massage For Man. Beograd.</p>
+        <p class="mt-1 opacity-70">18+ Only.</p>
     </footer>
 
-    <div class="sticky-contact md:hidden">
-        <a href="https://wa.me/84923973569" target="_blank" rel="noopener noreferrer" class="flex-1 bg-[#25D366] text-white flex items-center justify-center py-3 rounded-lg font-semibold gap-2 shadow-lg text-sm">
-            <i class="fab fa-whatsapp text-lg"></i> WhatsApp
+    <div class="app-bottom-bar">
+        <a href="https://wa.me/84923973569" class="flex-1 bg-[#25D366] text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 text-sm shadow-lg active:bg-[#1da851]">
+            <i class="fab fa-whatsapp text-lg"></i> WA
         </a>
-        <a href="viber://chat?number=%2B84385299355" class="flex-1 bg-[#7360F2] text-white flex items-center justify-center py-3 rounded-lg font-semibold gap-2 shadow-lg text-sm">
+        <a href="viber://chat?number=%2B84385299355" class="flex-1 bg-[#7360F2] text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 text-sm shadow-lg active:bg-[#5b4ac2]">
             <i class="fab fa-viber text-lg"></i> Viber
         </a>
     </div>
